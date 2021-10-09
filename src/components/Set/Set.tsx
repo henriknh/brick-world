@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ajax } from "rxjs/ajax";
 import Star from "../star/star";
-import styles from "./Set.module.scss";
 
 export interface ISet {
   last_modified_dt: string;
@@ -44,7 +43,7 @@ export default function Set(props: any) {
           <td>{set?.year}</td>
         </tbody>
       </table>
-      <img className="w-full" src={set?.set_img_url} />
+      <img className="w-full" src={set?.set_img_url} alt="Set" />
     </>
   );
 }

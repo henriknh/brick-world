@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { ISet } from "./set/Set";
 
 export interface IStars {
   stars: string[];

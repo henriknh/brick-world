@@ -1,6 +1,6 @@
 import classNames from "classnames";
-import React, { useContext, useEffect } from "react";
-import { IStars, StarsContext, StarsProvider } from "../stars-provider";
+import { useContext } from "react";
+import { IStars, StarsContext } from "../stars-provider";
 
 export interface IProps {
   setNum: string;
