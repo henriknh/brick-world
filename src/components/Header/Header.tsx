@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../Logo/Logo";
 import styles from "./Header.module.scss";
-import ndLogo from "../../images/nd-logo.svg";
+import Logo from "./logo/Logo";
 
 const Header = () => {
   return (
@@ -14,7 +13,7 @@ const Header = () => {
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
           <Logo />
-          <span className="ml-8 title">Brick it</span>
+          <span className={styles.title + " title"}>Brick it</span>
         </Link>
       </div>
 

@@ -2,22 +2,24 @@ import classNames from "classnames";
 import { ajax } from "rxjs/ajax";
 import { useContext, useEffect, useState } from "react";
 import styles from "./Dropdown.module.scss";
-import SelectedThemesContext, {
-  SelectedThemes,
-  Theme,
-} from "../../bricks/selected-themes-context";
+import {
+  ITheme,
+  ISelectedThemes,
+  SelectedThemesContext,
+} from "../../selected-themes-provider";
 
 export default function Dropdown() {
   const [active, setActive] = useState(false);
-  const [themes, setThemes] = useState<Theme[]>([]);
+  const [themes, setThemes] = useState<ITheme[]>([]);
   const [count, setCount] = useState(0);
   const [page, setPage] = useState(1);
 
-  const selectedThemes = useContext<SelectedThemes>(SelectedThemesContext);
+  const selectedThemes = useContext<ISelectedThemes>(SelectedThemesContext);
 
   const pageSize = 10;
 
   const secret = "cef91563c41612c871ed256c1a22e628";
+
   useEffect(() => {
     ajax
       .getJSON(
@@ -55,12 +57,12 @@ export default function Dropdown() {
         role="menu"
       >
         <div className="dropdown-content">
-          {themes.map((theme: Theme) => (
+          {themes.map((theme: ITheme) => (
             <label className="dropdown-item checkbox" key={theme.id}>
               <input
                 type="checkbox"
                 className={styles.checkbox}
-                defaultChecked={selectedThemes.hasTheme(theme)}
+                checked={selectedThemes.hasTheme(theme)}
                 onChange={() => selectedThemes.toggleTheme(theme)}
               />
               {theme.name}
@@ -68,32 +70,32 @@ export default function Dropdown() {
           ))}
           <>
             <hr className="dropdown-divider" />
-            <div className="dropdown-item columns">
-              <div className="column is-narrow">
-                <button
-                  className="button is-white"
-                  disabled={page === 1}
-                  onClick={() => setPage(page - 1)}
-                >
-                  <span className="icon">
-                    <i className="fas fa-chevron-left"></i>
-                  </span>
-                </button>
-              </div>
-              <div className={styles.pageText + " column is-align-self-center"}>
+            <div className="dropdown-item is-flex is-flex-direction-row">
+              <button
+                className="button is-white"
+                disabled={page === 1}
+                onClick={() => setPage(page - 1)}
+              >
+                <span className="icon">
+                  <i className="fas fa-chevron-left"></i>
+                </span>
+              </button>
+              <div
+                className={
+                  styles.pageText + " is-flex-grow-1 is-align-self-center"
+                }
+              >
                 {page} / {Math.ceil(count / pageSize)}
               </div>
-              <div className="column is-narrow">
-                <button
-                  className="button is-white"
-                  disabled={page >= count / pageSize}
-                  onClick={() => setPage(page + 1)}
-                >
-                  <span className="icon">
-                    <i className="fas fa-chevron-right"></i>
-                  </span>
-                </button>
-              </div>
+              <button
+                className="button is-white"
+                disabled={page >= count / pageSize}
+                onClick={() => setPage(page + 1)}
+              >
+                <span className="icon">
+                  <i className="fas fa-chevron-right"></i>
+                </span>
+              </button>
             </div>
           </>
           {selectedThemes.themes.length > 0 && (

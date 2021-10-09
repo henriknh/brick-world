@@ -2,12 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
-import Header from "./components/Header/Header";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Provider } from "react-redux";
-import About from "./components/About/About";
 import Bricks from "./components/bricks/bricks";
 import Footer from "./components/footer";
+import About from "./components/about/About";
+import Header from "./components/header/Header";
+import Set from "./components/set/Set";
+import { StarsProvider } from "./components/stars-provider";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,14 +22,13 @@ ReactDOM.render(
       <div className="background">
         <div className="content shadow-l is-flex is-flex-direction-column">
           <div className="is-flex-grow-1">
-            <Switch>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/">
-                <Bricks />
-              </Route>
-            </Switch>
+            <StarsProvider>
+              <Switch>
+                <Route path="/about" exact component={About} />
+                <Route path="/set/:set_num" exact component={Set} />
+                <Route path="/" exact component={Bricks} />
+              </Switch>
+            </StarsProvider>
           </div>
           <Footer />
         </div>
