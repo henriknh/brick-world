@@ -1,0 +1,60 @@
+.shadow-s {
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.75);
+}
+
+.shadow-l {
+  -webkit-box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.75);
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+$directions: (
+  "t": "top",
+  "r": "right",
+  "b": "bottom",
+  "l": "left",
+);
+
+@mixin marginAndPadding($distance) {
+  @each $direction, $name in $directions {
+    .m#{$direction}-#{$distance} {
+      margin-#{$name}: $distance;
+    }
+    .mx-#{$distance} {
+      margin-left: $distance;
+      margin-right: $distance;
+    }
+    .my-#{$distance} {
+      margin-top: $distance;
+      margin-bottom: $distance;
+    }
+
+    .p#{$direction}-#{$distance} {
+      padding-#{$name}: $distance;
+    }
+    .px-#{$distance} {
+      padding-left: $distance;
+      padding-right: $distance;
+    }
+    .py-#{$distance} {
+      padding-top: $distance;
+      padding-bottom: $distance;
+    }
+  }
+}
+
+$spacings: 2px, 4px, 8px, 16px, 24px, 32px;
+
+@each $spacing in $spacings {
+  @include marginAndPadding($spacing);
+}

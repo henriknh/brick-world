@@ -1,0 +1,42 @@
+@import "../node_modules/bulma/bulma";
+@import "styling/styling";
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-image: url("images/lego-purple.jpg");
+  background-repeat: repeat;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.header {
+  z-index: 100;
+  position: relative;
+}
+
+.background {
+  height: 100%;
+
+  .content {
+    max-width: 800px;
+    min-height: 100%;
+    background-color: white;
+    padding: 16px 24px;
+    margin: 0 auto;
+  }
+}
