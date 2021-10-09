@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+  # Add more stuff as needed
+  #redis:
+  #  image: "redis:alpine"
