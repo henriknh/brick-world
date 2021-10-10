@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Brick world
+
+Coding task for [New Default](https://www.newdefault.se/) using the [Rebrickable API](https://rebrickable.com/api/).
+
+![Screen shot](https://github.com/henriknh/brick-world/blob/main/screenshot.PNG?raw=true)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
