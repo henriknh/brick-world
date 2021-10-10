@@ -86,10 +86,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "update-and-start": "npm i && node scripts/start.js",
-    "docker-full": "npm run docker-build && npm run docker-run",
-    "docker-build": "docker build -t brick-world:dev .",
-    "docker-run": "docker run -it --rm -v /app -v /app/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true brick-world:dev"
+    "update-and-start": "npm i && node scripts/start.js"
   },
   "eslintConfig": {
     "extends": [
