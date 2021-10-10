@@ -35,12 +35,16 @@ export default function Set(props: any) {
       </div>
       <table className="table">
         <thead>
-          <th>Number of parts</th>
-          <th>Year</th>
+          <tr>
+            <th>Number of parts</th>
+            <th>Year</th>
+          </tr>
         </thead>
         <tbody>
-          <td>{set?.num_parts}</td>
-          <td>{set?.year}</td>
+          <tr>
+            <td>{set?.num_parts}</td>
+            <td>{set?.year}</td>
+          </tr>
         </tbody>
       </table>
       <img className="w-full" src={set?.set_img_url} alt="Set" />
