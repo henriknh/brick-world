@@ -5,10 +5,10 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Bricks from "./components/bricks/bricks";
 import Footer from "./components/footer";
-import About from "./components/about/About";
-import Header from "./components/header/Header";
-import Set from "./components/set/Set";
 import { StarsProvider } from "./components/stars-provider";
+import About from "./components/about/about";
+import Header from "./components/header/header";
+import Set from "./components/set/set";
 
 ReactDOM.render(
   <React.StrictMode>

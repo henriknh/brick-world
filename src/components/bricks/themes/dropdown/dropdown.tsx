@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { ajax } from "rxjs/ajax";
 import { useContext, useEffect, useState } from "react";
-import styles from "./Dropdown.module.scss";
+import styles from "./dropdown.module.scss";
 import {
   ITheme,
   ISelectedThemes,

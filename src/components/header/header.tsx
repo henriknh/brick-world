@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./Header.module.scss";
+import styles from "./header.module.scss";
 import Logo from "./logo/Logo";
 
 const Header = () => {

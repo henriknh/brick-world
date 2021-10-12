@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ajax } from "rxjs/ajax";
 import { ITheme } from "../../selected-themes-provider";
-import styles from "./Sets.module.scss";
-import { ISet } from "../../../set/Set";
+import styles from "./sets.module.scss";
 import Star from "../../../star/star";
+import { ISet } from "../../../set/set";
 
 interface IProps {
   theme: ITheme;

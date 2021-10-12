@@ -4,8 +4,8 @@ import {
   SelectedThemesContext,
   ITheme,
 } from "../selected-themes-provider";
-import NoSelection from "./no-selection/NoSelection";
-import Sets from "./sets/Sets";
+import NoSelection from "./no-selection/no-selection";
+import Sets from "./sets/sets";
 
 export default function SetsHolder() {
   const selectedThemes = useContext<ISelectedThemes>(SelectedThemesContext);

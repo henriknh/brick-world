@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./NoSelection.module.scss";
+import styles from "./no-selection.module.scss";
 
 export default function NoSelection() {
   return (

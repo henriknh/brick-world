@@ -1,5 +1,5 @@
-import Chips from "./chips/Chips";
-import Dropdown from "./dropdown/Dropdown";
+import Chips from "./chips/chips";
+import Dropdown from "./dropdown/dropdown";
 
 export default function ThemesHandler() {
   return (

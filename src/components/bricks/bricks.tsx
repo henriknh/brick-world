@@ -1,13 +1,13 @@
 import React from "react";
 import { SelectedThemesProvider } from "./selected-themes-provider";
-import Sets from "./sets-holder/SetsHolder";
-import ThemesHandler from "./themes/ThemesHandler";
+import SetsHolder from "./sets-holder/sets-holder";
+import ThemesHandler from "./themes/themes-handler";
 
 function Brick() {
   return (
     <SelectedThemesProvider>
       <ThemesHandler />
-      <Sets />
+      <SetsHolder />
     </SelectedThemesProvider>
   );
 }

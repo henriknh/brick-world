@@ -4,7 +4,7 @@ import {
   SelectedThemesContext,
   ITheme,
 } from "../../selected-themes-provider";
-import styles from "./Chips.module.scss";
+import styles from "./chips.module.scss";
 
 export default function Chips() {
   const selectedThemes = useContext<ISelectedThemes>(SelectedThemesContext);
